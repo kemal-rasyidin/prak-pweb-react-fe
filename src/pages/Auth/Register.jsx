@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../../Context/AppContext";
 
 export default function Register() {
   const { setToken } = useContext(AppContext);
@@ -13,7 +13,7 @@ export default function Register() {
     password_confirmation: "",
   });
 
-  const [errors, setError] = useState({});
+  const [errors, setErrors] = useState({});
 
   async function handleRegister(e) {
     e.preventDefault();
@@ -25,7 +25,7 @@ export default function Register() {
     const data = await res.json();
 
     if (data.errors) {
-      setError(data.errors);
+      setErrors(data.errors);
     } else {
       localStorage.setItem("token", data.token);
       setToken(data.token);
@@ -35,9 +35,9 @@ export default function Register() {
 
   return (
     <>
-      <h1 className="title">Register</h1>
+      <h1 className="title">Register a new account</h1>
 
-      <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y-4">
+      <form onSubmit={handleRegister} className="w-1/2 mx-auto space-y-6">
         <div>
           <input
             type="text"
@@ -47,6 +47,7 @@ export default function Register() {
           />
           {errors.name && <p className="error">{errors.name[0]}</p>}
         </div>
+
         <div>
           <input
             type="text"
@@ -58,6 +59,7 @@ export default function Register() {
           />
           {errors.email && <p className="error">{errors.email[0]}</p>}
         </div>
+
         <div>
           <input
             type="password"
@@ -69,6 +71,7 @@ export default function Register() {
           />
           {errors.password && <p className="error">{errors.password[0]}</p>}
         </div>
+
         <div>
           <input
             type="password"

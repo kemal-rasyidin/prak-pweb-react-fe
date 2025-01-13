@@ -17,12 +17,11 @@ export default function Update() {
     const res = await fetch(`/api/posts/${id}`);
     const data = await res.json();
 
-    console.log(data);
-
     if (res.ok) {
-      if (data.post.user_id === user.id) {
+      if (data.post.user_id !== user.id) {
         navigate("/");
       }
+
       setFormData({
         title: data.post.title,
         body: data.post.body,
@@ -58,7 +57,7 @@ export default function Update() {
 
   return (
     <>
-      <h1 className="title">Update a post</h1>
+      <h1 className="title">Update your post</h1>
 
       <form onSubmit={handleUpdate} className="w-1/2 mx-auto space-y-6">
         <div>
@@ -83,7 +82,7 @@ export default function Update() {
           {errors.body && <p className="error">{errors.body[0]}</p>}
         </div>
 
-        <button className="primary-btn">Update Post</button>
+        <button className="primary-btn">Update</button>
       </form>
     </>
   );

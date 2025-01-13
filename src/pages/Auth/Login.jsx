@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../../Context/AppContext";
 
 export default function Login() {
   const { setToken } = useContext(AppContext);
@@ -11,7 +11,7 @@ export default function Login() {
     password: "",
   });
 
-  const [errors, setError] = useState({});
+  const [errors, setErrors] = useState({});
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -23,7 +23,7 @@ export default function Login() {
     const data = await res.json();
 
     if (data.errors) {
-      setError(data.errors);
+      setErrors(data.errors);
     } else {
       localStorage.setItem("token", data.token);
       setToken(data.token);
@@ -33,9 +33,9 @@ export default function Login() {
 
   return (
     <>
-      <h1 className="title">Login</h1>
+      <h1 className="title">Login to your account</h1>
 
-      <form onSubmit={handleLogin} className="w-1/2 mx-auto space-y-4">
+      <form onSubmit={handleLogin} className="w-1/2 mx-auto space-y-6">
         <div>
           <input
             type="text"
@@ -47,6 +47,7 @@ export default function Login() {
           />
           {errors.email && <p className="error">{errors.email[0]}</p>}
         </div>
+
         <div>
           <input
             type="password"

@@ -10,7 +10,7 @@ export default function AppProvider({ children }) {
     const res = await fetch("/api/user", {
       headers: {
         Authorization: `Bearer ${token}`,
-      }
+      },
     });
     const data = await res.json();
 

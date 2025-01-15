@@ -32,26 +32,26 @@ export default function Layout() {
       <header>
         <nav>
           <Link to="/" className="nav-link">
-            Home
+            Beranda
           </Link>
 
           {user ? (
             <div className="flex items-center space-x-4">
-              <p className="text-slate-400 text-xs">Welcome back {user.name}</p>
+              <p className="text-slate-400 text-xs">Halo, {user.name}</p>
               <Link to="/create" className="nav-link">
-                New Post
+                Postingan Baru
               </Link>
               <form onSubmit={handleLogout}>
-                <button className="nav-link">Logout</button>
+                <button className="nav-link">Keluar</button>
               </form>
             </div>
           ) : (
             <div className="space-x-4">
               <Link to="/register" className="nav-link">
-                Register
+                Daftar
               </Link>
               <Link to="/login" className="nav-link">
-                Login
+                Masuk
               </Link>
             </div>
           )}

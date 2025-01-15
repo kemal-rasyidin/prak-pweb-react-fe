@@ -34,13 +34,13 @@ export default function Create() {
 
   return (
     <>
-      <h1 className="title">Create a new post</h1>
+      <h1 className="title">Buat postingan baru</h1>
 
       <form onSubmit={handleCreate} className="w-1/2 mx-auto space-y-6">
         <div>
           <input
             type="text"
-            placeholder="Post Title"
+            placeholder="Judul Postingan"
             value={formData.title}
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
@@ -52,14 +52,14 @@ export default function Create() {
         <div>
           <textarea
             rows="6"
-            placeholder="Post Content"
+            placeholder="Konten Postingan"
             value={formData.body}
             onChange={(e) => setFormData({ ...formData, body: e.target.value })}
           ></textarea>
           {errors.body && <p className="error">{errors.body[0]}</p>}
         </div>
 
-        <button className="primary-btn">Create Post</button>
+        <button className="primary-btn">Buat</button>
       </form>
     </>
   );

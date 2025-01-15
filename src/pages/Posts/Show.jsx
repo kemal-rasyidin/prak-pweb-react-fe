@@ -57,7 +57,7 @@ export default function Show() {
             <div>
               <h2 className="font-bold text-2xl">{post.title}</h2>
               <small className="text-xs text-slate-600">
-                Created by {post.user.name} on{" "}
+                Dibuat oleh {post.user.name} on{" "}
                 {new Date(post.created_at).toLocaleTimeString()}
               </small>
             </div>
@@ -70,12 +70,12 @@ export default function Show() {
                 to={`/posts/update/${post.id}`}
                 className="bg-green-500 text-white text-sm rounded-lg px-3 py-1"
               >
-                Update
+                Perbarui
               </Link>
 
               <form onSubmit={handleDelete}>
                 <button className="bg-red-500 text-white text-sm rounded-lg px-3 py-1">
-                  Delete
+                  Hapus
                 </button>
               </form>
             </div>

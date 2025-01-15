@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <>
-      <h1 className="title">Login to your account</h1>
+      <h1 className="title">Masuk akun</h1>
 
       <form onSubmit={handleLogin} className="w-1/2 mx-auto space-y-6">
         <div>
@@ -51,7 +51,7 @@ export default function Login() {
         <div>
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Kata sandi"
             value={formData.password}
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })

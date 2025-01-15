@@ -57,13 +57,13 @@ export default function Update() {
 
   return (
     <>
-      <h1 className="title">Update your post</h1>
+      <h1 className="title">Perbarui Postingan</h1>
 
       <form onSubmit={handleUpdate} className="w-1/2 mx-auto space-y-6">
         <div>
           <input
             type="text"
-            placeholder="Post Title"
+            placeholder="Judul Postingan"
             value={formData.title}
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
@@ -75,14 +75,14 @@ export default function Update() {
         <div>
           <textarea
             rows="6"
-            placeholder="Post Content"
+            placeholder="Konten Postingan"
             value={formData.body}
             onChange={(e) => setFormData({ ...formData, body: e.target.value })}
           ></textarea>
           {errors.body && <p className="error">{errors.body[0]}</p>}
         </div>
 
-        <button className="primary-btn">Update</button>
+        <button className="primary-btn">Perbarui</button>
       </form>
     </>
   );

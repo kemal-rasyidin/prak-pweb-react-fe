@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="title">Postingan Terakhir</h1>
+      <h1 className="title">Postingan terakhir</h1>
 
       {posts.length > 0 ? (
         posts.map((post) => (
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         ))
       ) : (
-        <p>There are no posts</p>
+        <p>Tidak ada postingan</p>
       )}
     </>
   );

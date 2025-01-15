@@ -82,7 +82,7 @@ export default function Show() {
           )}
         </div>
       ) : (
-        <p className="title">Post not found!</p>
+        <p className="title">Postingan tidak ditemukan!</p>
       )}
     </>
   );
